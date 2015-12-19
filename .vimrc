@@ -20,3 +20,19 @@ set smarttab
 set shiftwidth=4
 set tabstop=4    
 set hlsearch  "hight line show the search result 
+
+"config bundle plugin
+"open vim , and run :BundleInstall
+"or vim +BundleInstall +qall
+
+set runtimepath=~/.vim,$VIMRUNTIME
+
+set nocompatible
+filetype off
+
+"config vundle plugin
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'BundleVim/Vundle.vim'
+call vundle#end()
+filetype plugin indent on
