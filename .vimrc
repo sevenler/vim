@@ -24,6 +24,7 @@ set hlsearch  "hight line show the search result
 set runtimepath=~/.vim,$VIMRUNTIME
 
 set nocompatible
+set backspace=2
 filetype off
 
 "config bundle plugin
