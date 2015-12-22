@@ -40,7 +40,6 @@ call vundle#end()
 filetype plugin indent on
 
 "config netrw
-let g:netrw_liststyle=3
 let g:netrw_list_hide='\.o,\.obj,*\~,\.pyc,' "stuff to ignore when tab completing
 let g:netrw_list_hide.='\.env,'
 let g:netrw_list_hide.='\.env[0-9].,'
@@ -68,3 +67,7 @@ let g:netrw_list_hide.='\.egg,\.egg-info,'
 let g:netrw_list_hide.='\.png,\.jpg,\.gif,'
 let g:netrw_list_hide.='\.so,\.swp,\.zip,/\.Trash/,\.pdf,\.dmg,/Library/,/\.rbenv/,'
 let g:netrw_list_hide.='*/\.nx/**,*\.app'
+
+let g:netrw_banner = 0 " do not display info on the top of window
+let g:netrw_liststyle=3 "list style = tree
+let g:netrw_winsize=80 "set netrw open window absolute width
