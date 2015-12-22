@@ -36,6 +36,7 @@ set wildignore-=doc
 call vundle#begin()
 Plugin 'BundleVim/Vundle.vim'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'scrooloose/nerdtree'
 call vundle#end()
 filetype plugin indent on
 
@@ -71,3 +72,8 @@ let g:netrw_list_hide.='*/\.nx/**,*\.app'
 let g:netrw_banner = 0 " do not display info on the top of window
 let g:netrw_liststyle=3 "list style = tree
 let g:netrw_winsize=80 "set netrw open window absolute width
+
+" NERDTree config
+map <F2> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
+autocmd vimenter * NERDTree
