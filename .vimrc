@@ -37,43 +37,30 @@ call vundle#begin()
 Plugin 'BundleVim/Vundle.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/nerdtree'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'othree/javascript-libraries-syntax'
 call vundle#end()
 filetype plugin indent on
-
-"config netrw
-let g:netrw_list_hide='\.o,\.obj,*\~,\.pyc,' "stuff to ignore when tab completing
-let g:netrw_list_hide.='\.env,'
-let g:netrw_list_hide.='\.env[0-9].,'
-let g:netrw_list_hide.='\.env-pypy,'
-let g:netrw_list_hide.='\.git,'
-let g:netrw_list_hide.='\.gitkeep,'
-let g:netrw_list_hide.='\.vagrant,'
-let g:netrw_list_hide.='\.tmp,'
-let g:netrw_list_hide.='\.coverage$,'
-let g:netrw_list_hide.='\.DS_Store,'
-let g:netrw_list_hide.='__pycache__,'
-let g:netrw_list_hide.='\.webassets-cache/,'
-let g:netrw_list_hide.='\.sass-cache/,'
-let g:netrw_list_hide.='\.ropeproject/,'
-let g:netrw_list_hide.='vendor/rails/,'
-let g:netrw_list_hide.='vendor/cache/,'
-let g:netrw_list_hide.='\.gem,'
-let g:netrw_list_hide.='\.ropeproject/,'
-let g:netrw_list_hide.='\.coverage/,'
-let g:netrw_list_hide.='log/,'
-let g:netrw_list_hide.='tmp/,'
-let g:netrw_list_hide.='\.tox/,'
-let g:netrw_list_hide.='\.idea/,'
-let g:netrw_list_hide.='\.egg,\.egg-info,'
-let g:netrw_list_hide.='\.png,\.jpg,\.gif,'
-let g:netrw_list_hide.='\.so,\.swp,\.zip,/\.Trash/,\.pdf,\.dmg,/Library/,/\.rbenv/,'
-let g:netrw_list_hide.='*/\.nx/**,*\.app'
-
-let g:netrw_banner = 0 " do not display info on the top of window
-let g:netrw_liststyle=3 "list style = tree
-let g:netrw_winsize=80 "set netrw open window absolute width
 
 " NERDTree config
 map <F2> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
 autocmd vimenter * NERDTree
+let NERDChristmasTree=0
+let NERDTreeWinSize=40
+let NERDTreeChDirMode=2
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
+let NERDTreeShowBookmarks=1
+let NERDTreeWinPos="left"
+
+"config javascript libraries syntax
+autocmd BufReadPre *.js let b:javascript_lib_use_jquery = 1
+autocmd BufReadPre *.js let b:javascript_lib_use_underscore = 1
+autocmd BufReadPre *.js let b:javascript_lib_use_backbone = 1
+autocmd BufReadPre *.js let b:javascript_lib_use_prelude = 0
+autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 0
+
+"config command dd without copy
+nnoremap d "_d
+vnoremap d "_d
+vnoremap p "_dP
