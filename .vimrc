@@ -39,6 +39,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/nerdtree'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax'
+Plugin 'szw/vim-tags'
 call vundle#end()
 filetype plugin indent on
 
@@ -64,3 +65,4 @@ autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 0
 nnoremap d "_d
 vnoremap d "_d
 vnoremap p "_dP
+

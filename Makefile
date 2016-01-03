@@ -8,4 +8,6 @@ release:
 	cp -r colors/ ~/.vim/colors
 	#install bundle 
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	#if mac os 
+	brew install ctags
 
