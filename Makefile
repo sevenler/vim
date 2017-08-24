@@ -1,13 +1,17 @@
 #!/usr/bin/env bash
 #coding=utf8
 
-release:
-	cp .vimrc ~/.vimrc
-	#install colors
-	mkdir -p ~/.vim/colors
-	cp -r colors/ ~/.vim/colors
-	#install bundle 
-	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-	#if mac os 
-	brew install ctags
+VIMPATH=~/.vim
+VIMRC=~/.vimrc
 
+VIM_BUNDLE=$(VIMPATH)/bundle
+PATHOGEN=mkdir -p $(VIMPATH)/autoload $(VIM_BUNDLE) && curl -LSso $(VIMPATH)/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
+plugs:
+	@rm -fr $(VIM_BUNDLE)
+	$(PATHOGEN)
+	git clone https://github.com/scrooloose/nerdtree.git $(VIM_BUNDLE)/nerdtree
+
+install:
+	@cp .vimrc $(VIMRC) 
+	@make plugs
