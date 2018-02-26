@@ -10,7 +10,7 @@ Plugin 'scrooloose/nerdtree'
 call vundle#end()          
 filetype plugin indent on 
 
-
+let NERDTreeIgnore = ['\.pyc$']
 syntax on
 
 set encoding=utf-8
